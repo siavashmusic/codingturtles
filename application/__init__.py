@@ -50,10 +50,9 @@ def create_app():
 
 
 def create_database(app):
-    # if not path.exists('codingturtles/' + DB_NAME):
-    #     with app.app_context():
-    app.app_context()
-    db.create_all()
-    print("Created Database!")
+    if not path.exists('codingturtles/' + DB_NAME):
+        with app.app_context():
+            db.create_all()
+            print("Created Database!")
 
 # from application import routes
