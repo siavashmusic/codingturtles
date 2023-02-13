@@ -12,16 +12,16 @@ from flask_login import LoginManager
 # db = MySQL(app)
 
 app = Flask(__name__)
-# DB_NAME = "database.db"
+DB_NAME = "database.db"
 db = SQLAlchemy()
 
 
 def create_app():
 
     app.config['SECRET_KEY'] = b'_5#y2L"F4Q8z\n\xec]/'
-    # app.config['SQLALCHEMY_DATABASE_URI'] = F"sqlite:///{DB_NAME}"
+    app.config['SQLALCHEMY_DATABASE_URI'] = F"sqlite:///{DB_NAME}"
 
-    app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://doadmin:AVNS_KGOgB4_llIiJzcCbWFg@db-postgresql-lon1-69003-do-user-486561-0.b.db.ondigitalocean.com:25060/defaultdb?sslmode=require"
+    # app.config['SQLALCHEMY_DATABASE_URI'] = ""
     # app.config['MYSQL_HOST'] = 'localhost'
     # app.config['MYSQL_USER'] = 'root'
     # app.config['MYSQL_PASSWORD'] = '1359slSL@'
@@ -44,16 +44,16 @@ def create_app():
     def load_user(user_id):
         return User.query.get(user_id)
 
-    # with app.app_context():
-    #     db.create_all()
+    with app.app_context():
+        db.create_all()
     return app
 
 
-# def create_database(app):
-#     # if not path.exists('codingturtles/' + DB_NAME):
-#     #     with app.app_context():
-#     app.app_context()
-#     db.create_all()
-#     print("Created Database!")
+def create_database(app):
+    # if not path.exists('codingturtles/' + DB_NAME):
+    #     with app.app_context():
+    app.app_context()
+    db.create_all()
+    print("Created Database!")
 
 # from application import routes
