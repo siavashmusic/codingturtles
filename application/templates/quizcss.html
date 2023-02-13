@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <main id="main">
+<section class="single-post-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9 post-content" data-aos="fade-up">
+
+              <figure class="my-4">
+                <img src="static/img/quiztime.png" alt="" class="img-fluid">
+              </figure>
+
+            <!-- ======= Single Post Content ======= -->
+<ol>
+        <li>
+          <p>What is CSS stands for?</p>
+          <ol type="A">
+            <li><input type="radio" name="question1" value="A">A. Cascading Style Sheets</li>
+            <li><input type="radio" name="question1" value="B">B. Creative Style Sheets</li>
+            <li><input type="radio" name="question1" value="C">C. Character Style Sheets</li>
+          </ol>
+        </li>
+        <br>
+        <li>
+          <p>Which CSS property is used to change the background color of an element?</p>
+          <ol type="A">
+            <li><input type="radio" name="question2" value="A">A. background-colour</li>
+            <li><input type="radio" name="question2" value="B">B. background-color</li>
+            <li><input type="radio" name="question2" value="C">C. bgcolor</li>
+          </ol>
+        </li>
+        <br>
+        <li>
+          <p>What is the correct CSS syntax for making all the &lt;p&gt; elements bold?</p>
+          <ol type="A">
+            <li><input type="radio" name="question3" value="A">A. p {font-weight:bold;}</li>
+            <li><input type="radio" name="question3" value="B">B. &lt;p style="font-weight:bold;"&gt;</li>
+            <li><input type="radio" name="question3" value="C">C. &lt;bold&gt;p&lt;/bold&gt;</li>
+          </ol>
+        </li>
+        <br>
+        <li>
+          <p>Which CSS property is used to change the font of an element?</p>
+          <ol type="A">
+            <li><input type="radio" name="question4" value="A">A. font-style</li>
+            <li><input type="radio" name="question4" value="B">B. font-family</li>
+            <li><input type="radio" name="question4" value="C">C. font</li>
+          </ol>
+        </li>
+        <br>
+        <li>
+          <p>What is the CSS property used to set the width and height of an element?</p>
+          <ol type="A">
+            <li><input type="radio" name="question5" value="A">A. size</li>
+            <li><input type="radio" name="question5" value="B">B. width and height</li>
+            <li><input type="radio" name="question5" value="C">C. dimensions</li>
+        </li>
+    </ol>
+    <input type="button" value="Submit" onclick="checkAnswersCss()">
+    </div><!-- End Single Post Content -->
+
+<div class="col-md-3">
+            <!-- ======= Sidebar ======= -->
+            <div class="aside-block">
+
+              <ul class="nav nav-pills custom-tab-nav mb-4" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="pills-popular-tab" data-bs-toggle="pill" data-bs-target="#pills-popular" type="button" role="tab" aria-controls="pills-popular" aria-selected="true">Tranding news</button>
+                </li>
+              </ul>
+
+              <div class="tab-content" id="pills-tabContent">
+
+                <!-- Popular -->
+                <div class="tab-pane fade show active" id="pills-popular" role="tabpanel" aria-labelledby="pills-popular-tab">
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Tech</span> <span class="mx-1">&bullet;</span> <span>May 6, 2022</span></div>
+                    <h2 class="mb-2"><a href="https://www.wgu.edu/blog/software-development-good-career2205.html#close">Is Software Development a Good Career?</a></h2>
+                    <span class="author mb-3 d-block">Jenny Wilson</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">AI</span> <span class="mx-1">&bullet;</span> <span>Feb 12 2023</span></div>
+                    <h2 class="mb-2"><a href="https://techcrunch.com/2023/02/12/ai-comes-to-expense-reports/">AI comes to expense reports</a></h2>
+                    <span class="author mb-3 d-block">Mary Ann Azevedo</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Search Engin</span> <span class="mx-1">&bullet;</span> <span>Feb 12 2023</span></div>
+                    <h2 class="mb-2"><a href="https://www.techradar.com/news/bing-is-microsofts-chance-to-win-the-search-battle-if-bing-doesnt-screw-it-up">Bing is Microsoft's chance to win the search battle if Bing doesn't screw it up</a></h2>
+                    <span class="author mb-3 d-block">Lance Ulanoff</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Machine learning</span> <span class="mx-1">&bullet;</span> <span>Feb 7 2023</span></div>
+                    <h2 class="mb-2"><a href="https://www.sciencedaily.com/releases/2023/02/230207144238.htm">Solving a machine-learning mystery</a></h2>
+                    <span class="author mb-3 d-block">Adam Zewe</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Programming languages</span> <span class="mx-1">&bullet;</span> <span>Feb 11 2023</span></div>
+                    <h2 class="mb-2"><a href="https://www.analyticsinsight.net/top-programming-languages-to-learn-at-coding-bootcamp/">Top Programming Languages to Learn at Coding Bootcamp</a></h2>
+                    <span class="author mb-3 d-block">Apoorva Bellapu</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">programming languages</span> <span class="mx-1">&bullet;</span> <span>Jan 17 2023</span></div>
+                    <h2 class="mb-2"><a href="https://www.techtarget.com/searchsoftwarequality/news/252529257/Experts-rate-programming-languages-for-beginners-in-2023">Experts rate programming languages for beginners in 2023</a></h2>
+                    <span class="author mb-3 d-block">Stephanie Glen</span>
+                  </div>
+                </div> <!-- End Popular -->
+
+
+
+              </div>
+            </div>
+
+            <div class="aside-block">
+              <h3 class="aside-title">Video</h3>
+              <div class="video-post">
+                <a href="https://youtu.be/salY_Sm6mv4" class="glightbox link-video">
+                  <span class="bi-play-fill"></span>
+                    <iframe width="306" height="194" src="https://www.youtube.com/embed/salY_Sm6mv4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<!--                  <img src="static/img/post-landscape-5.jpg" alt="" class="img-fluid">-->
+                </a>
+              </div>
+            </div><!-- End Video -->
+        </div>
+      </div>
+</section>
+  </main>
+{% endblock %}
+
+

@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "base.html" %}
 
 {% block content%}
 <main id="main">
@@ -6,19 +6,20 @@
       <div class="container">
         <div class="row">
 
+
           <div class="col-md-9" data-aos="fade-up">
-            <h3 class="category-title">Category: Business</h3>
+            <h3 class="category-title">SHORT ARTICLES</h3>
 {% for data in courseData %}
             <div class="d-md-flex post-entry-2 half">
-              <a href="single-post.html" class="me-4 thumbnail">
-                <img src="{{ data['img'] }}" alt="" class="img-fluid">
+              <a href="{{data['link']}}" class="me-4 thumbnail">
+                <img src="{{ url_for('static', filename='img/') }}{{ data['img'] }}" alt="" class="img-fluid">
               </a>
               <div>
                 <div class="post-meta"><span class="date">{{ data['courseID'] }}</span> <span class="mx-1">&bullet;</span> <span>{{ data['pubDate'] }}</span></div>
                 <h3><a href="single-post.html">{{ data['title'] }}</a></h3>
                 <p>{{ data['desc'] }}</p>
                 <div class="d-flex align-items-center author">
-                  <div class="photo"><img src="static/img/person-2.jpg" alt="" class="img-fluid"></div>
+                  <div class="photo"><img src="{{ url_for('static', filename='img/person-2.jpg') }}" alt="" class="img-fluid"></div>
                   <div class="name">
                     <h3 class="m-0 p-0">{{ data['postBy'] }}</h3>
                   </div>
@@ -39,6 +40,122 @@
               </div>
             </div>
           </div>
+
+           <div class="col-md-3">
+            <!-- ======= Sidebar ======= -->
+            <div class="aside-block">
+
+              <ul class="nav nav-pills custom-tab-nav mb-4" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="pills-popular-tab" data-bs-toggle="pill" data-bs-target="#pills-popular" type="button" role="tab" aria-controls="pills-popular" aria-selected="true">Free Courses</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-trending-tab" data-bs-toggle="pill" data-bs-target="#pills-trending" type="button" role="tab" aria-controls="pills-trending" aria-selected="false">Download</button>
+                </li>
+
+              </ul>
+
+              <div class="tab-content" id="pills-tabContent">
+
+                <!-- free courses -->
+                <div class="tab-pane fade show active" id="pills-popular" role="tabpanel" aria-labelledby="pills-popular-tab">
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Php</span> <span class="mx-1">&bullet;</span> <span>Feb 2023</span></div>
+                    <h2 class="mb-2"><a href="https://phptherightway.com/">Php the right way</a></h2>
+                    <span class="author mb-3 d-block">Website</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Web development</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+                    <h2 class="mb-2"><a href="https://frontendmasters.com/bootcamp/"> Frontend Masters Web Development Bootcamp...Free!</a></h2>
+                    <span class="author mb-3 d-block">Frontend masters</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Javascript</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+                    <h2 class="mb-2"><a href="https://egghead.io/q/javascript">JavaScript fundamentals</a></h2>
+                    <span class="author mb-3 d-block">egghead</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Css</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+                    <h2 class="mb-2"><a href="https://geddski.teachable.com/p/flexbox-zombies">Css flex box game</a></h2>
+                    <span class="author mb-3 d-block">Geddski</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Python</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+                    <h2 class="mb-2"><a href="https://pythoninstitute.org/python-essentials-2">Python Essentials 2</a></h2>
+                    <span class="author mb-3 d-block">Python institute</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Python</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+                    <h2 class="mb-2"><a href="https://jovian.com/learn/data-structures-and-algorithms-in-python">Data Structures and Algorithms in Python</a></h2>
+                    <span class="author mb-3 d-block">Jovian</span>
+                  </div>
+                </div> <!-- End free courses -->
+                <!-- download documents -->
+                <div class="tab-pane fade" id="pills-trending" role="tabpanel" aria-labelledby="pills-trending-tab">
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Css flexbox</span> <span class="mx-1">&bullet;</span> <span>Feb 2023</span></div>
+                    <h2 class="mb-2"><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">A Complete Guide to Flexbox</a></h2>
+                    <span class="author mb-3 d-block">css-tricks</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Python</span> <span class="mx-1">&bullet;</span> <span>Feb 2023</span></div>
+                    <h2 class="mb-2"><a href="https://assets.digitalocean.com/books/python/how-to-code-in-python.pdf">How To Code in Python 3</a></h2>
+                    <span class="author mb-3 d-block">Lisa Tagliaferri</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Php</span> <span class="mx-1">&bullet;</span> <span>Feb 2023</span></div>
+                    <h2 class="mb-2"><a href="https://riptutorial.com/Download/php.pdf">Learning PHP</a></h2>
+                    <span class="author mb-3 d-block">Stack overflow conttributors</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Sql</span> <span class="mx-1">&bullet;</span> <span>Feb 2023</span></div>
+                    <h2 class="mb-2"><a href="http://projanco.com/Library/Practical%20SQL%20A%20Beginner%E2%80%99s%20Guide%20to%20Storytelling%20with%20Data.pdf">PRACTICAL SQL A Beginner’s Guide to Storytelling with Data</a></h2>
+                    <span class="author mb-3 d-block">Anthony DeBarros</span>
+                  </div>
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Html&css</span> <span class="mx-1">&bullet;</span> <span>Feb 2023</span></div>
+                    <h2 class="mb-2"><a href="https://www.dcpehvpm.org/E-Content/BCA/BCA-II/Web%20Technology/the-complete-reference-html-css-fifth-edition.pdf">HTML & CSS:  The Complete Reference,  Fifth Edition</a></h2>
+                    <span class="author mb-3 d-block">Sta</span>
+                  </div>
+
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">Javascript</span> <span class="mx-1">&bullet;</span> <span>Feb 2023</span></div>
+                    <h2 class="mb-2"><a href="#">JavaScript For Impatient Programmers</a></h2>
+                    <span class="author mb-3 d-block">Dr. Axel Rauschmayer</span>
+                  </div>
+                </div> <!-- End downliad documents -->
+
+
+              </div>
+            </div>
+
+            <div class="aside-block">
+              <h3 class="aside-title">Videos</h3>
+              <div class="video-post">
+                <a href="https://youtu.be/salY_Sm6mv4" class="glightbox link-video">
+<!--                  <span class="bi-play-fill"></span>-->
+                    <iframe width="306" height="194" src="https://www.youtube.com/embed/salY_Sm6mv4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<!--                  <img src="static/img/post-landscape-5.jpg" alt="" class="img-fluid">-->
+                </a>
+              </div>
+              <div class="video-post">
+                <a href="https://youtu.be/mU6anWqZJcc" class="glightbox link-video">
+<!--                  <span class="bi-play-fill"></span>-->
+<iframe width="306" height="194" src="https://www.youtube.com/embed/mU6anWqZJcc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><!--                  <img src="static/img/post-landscape-5.jpg" alt="" class="img-fluid">-->
+                </a>
+              </div>
+            </div><!-- End Video -->
+              </div>
+            </div>
+
         </div>
     </div>
   </section>

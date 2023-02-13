@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<main id="main">
+
+    <section class="single-post-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9 post-content" data-aos="fade-up">
+
+            <!-- ======= Single Post Content ======= -->
+            <div class="single-post">
+              <div class="post-meta"><span class="date">Sql</span> <span class="mx-1">&bullet;</span> <span>Feb 2023</span></div>
+              <h1 class="mb-5">Orm</h1>
+              <p><span class="firstcharacter">R</span>elational mapping, also known as Object-Relational Mapping (ORM), is the process of mapping objects in an object-oriented programming language to relational database tables. This allows developers to interact with databases using familiar object-oriented concepts, instead of writing raw SQL code.</p>
+
+              <figure class="my-4">
+                <img src="static/img/orm.png" alt="" class="img-fluid">
+                <figcaption>Object-Relational Mapping (ORM)</figcaption>
+              </figure>
+              <p>The main advantage of using relational mapping is that it reduces the amount of code that needs to be written and maintained, as the mapping framework handles the low-level details of database interaction. It also increases code maintainability and reduces the risk of SQL injection attacks, as the framework automatically escapes any user-supplied data before sending it to the database.</p>
+
+<p>In relational mapping, objects are represented by classes, and each class is mapped to a database table. Properties of the class are mapped to columns in the table, and instances of the class are mapped to rows in the table. This allows developers to create, read, update, and delete objects in the database using familiar object-oriented methods, such as the create(), save(), find(), and delete() methods.</p>
+
+<p>Relational mapping frameworks are available for many popular programming languages, including PHP, Java, and Python. These frameworks typically provide a high-level API for performing database operations, as well as a configuration mechanism for specifying the mapping between objects and tables. For example, in PHP, the Doctrine ORM framework is a popular choice for relational mapping.</p>
+<p>In conclusion, relational mapping is a powerful technique for simplifying database interaction in object-oriented programming languages. By mapping objects to relational databases, developers can write more concise and maintainable code, and take advantage of the rich set of tools and frameworks available for relational mapping.</p>
+            </div><!-- End Single Post Content -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+  {% endblock %}

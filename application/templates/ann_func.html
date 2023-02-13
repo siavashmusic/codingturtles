@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<main id="main">
+
+    <section class="single-post-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9 post-content" data-aos="fade-up">
+
+            <!-- ======= Single Post Content ======= -->
+            <div class="single-post">
+              <div class="post-meta"><span class="date">Css</span> <span class="mx-1">&bullet;</span> <span>Feb 2023</span></div>
+              <h1 class="mb-5">Anonymous functions</h1>
+              <p><span class="firstcharacter">A</span>nonymous functions are a type of function in JavaScript that does not have a name. They are often referred to as "lambda functions" or "arrow functions," and they provide a compact and convenient way to define small, one-off functions. Anonymous functions are used in a variety of contexts, such as callbacks, event handlers, and array operations.</p>
+
+              <figure class="my-4">
+                <img src="static/img/ann_func.png" alt="" class="img-fluid">
+                <figcaption>Self invoking anonymous function</figcaption>
+              </figure>
+              <p>One of the main benefits of anonymous functions is that they allow you to define functions inline, without having to write a separate function declaration. This can help make your code more concise and readable, especially when you need to pass a small function as an argument to another function. Anonymous functions can also be useful when you need to create a function that will only be used once, and therefore doesn't need a meaningful name.</p>
+
+<p>When defining anonymous functions, you use the "function" keyword, followed by a set of parentheses that contain the function's parameters. The function body is contained within curly braces, and it can contain any valid JavaScript code. For example, you can define an anonymous function that takes two arguments and returns their sum as follows:</p>
+
+<p>Anonymous functions can be assigned to variables, passed as arguments to other functions, or immediately invoked. This flexibility makes anonymous functions a versatile tool in your JavaScript toolbox, allowing you to write concise and effective code in a variety of contexts.</p>
+</div><!-- End Single Post Content -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+  {% endblock %}

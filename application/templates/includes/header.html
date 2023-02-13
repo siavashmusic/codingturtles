@@ -2,42 +2,45 @@
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-      <a href="{{ url_for('index') }}" class="logo d-flex align-items-center">
+      <a href="{{ url_for('views.index') }}" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="../static/img/logo.svg" alt="" width="40" height="200" class="d-inline-block align-text-top">
+        <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="" width="40" height="200" class="d-inline-block align-text-top">
         <h1>Coding Turtles</h1>
       </a>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="{{ url_for('html') }}">HTML</a></li>
-          <li><a href="{{ url_for('css') }}">CSS</a></li>
-          <li><a href="{{ url_for('sql') }}">SQL</a></li>
-          <li class="dropdown"><a href="category.html"><span>Categories</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+          <li><a href="{{ url_for('views.html') }}">HTML</a></li>
+          <li><a href="{{ url_for('views.css') }}">CSS</a></li>
+          <li><a href="{{ url_for('views.sql') }}">SQL</a></li>
+          <li><a href="{{ url_for('views.php') }}">PHP</a></li>
+          <li><a href="{{ url_for('views.javascript') }}">JAVASCRIPT</a></li>
+          <li><a href="{{ url_for('views.contactus') }}">CONTACT US</a></li>
+          <li class="dropdown"><a href="category.html"><span>RESOURCES</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
-              <li><a href="search-result.html">Search Result</a></li>
+              <li><a href="{{ url_for('views.mentor') }}">Mentors</a></li>
               <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
+<!--              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>-->
+<!--                <ul>-->
+<!--                  <li><a href="#">Deep Drop Down 2</a></li>-->
+<!--                  <li><a href="#">Deep Drop Down 3</a></li>-->
+<!--                  <li><a href="#">Deep Drop Down 4</a></li>-->
+<!--                  <li><a href="#">Deep Drop Down 5</a></li>-->
+<!--                </ul>-->
+<!--              </li>-->
               <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
+
+              <li><a href="{{ url_for('views.quiz') }}">quiz</a></li>
             </ul>
           </li>
 
-          <li><a href="{{ url_for('php') }}">PHP</a></li>
-          <li><a href="{{ url_for('javascript') }}">JAVASCRIPT</a></li>
-          {% if login %}
-          <li><a href="{{ url_for('login') }}">LOGIN</a></li>
+
+          {% if current_user.is_authenticated %}
+          <li><a href="{{url_for('auth.logout')}}">Hi {{ current_user.name }}! - LOGOUT</a></li>
           {% else %}
-          <li><a href="{{ url_for('signup') }}">SIGNUP</a></li>
+          <li><a href="{{ url_for('auth.signup') }}">SIGNUP</a></li>
+          <li><a href="{{ url_for('auth.login') }}">LOGIN</a></li>
+
           {% endif %}
         </ul>
       </nav><!-- .navbar -->
