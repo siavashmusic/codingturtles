@@ -1,25 +1,23 @@
 import os
-
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from os import path
 from flask_login import LoginManager
 # import the dotenv in order to access .env file
 from dotenv import load_dotenv
-from config import Config
-# from flask_migrate import Migrate
 
 app = Flask(__name__)
-app.config.from_object(Config)
+
 # DB_NAME = "database.db"
 db = SQLAlchemy(app)
 
 
 def create_app():
-    # load_dotenv()
-    # app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
+    load_dotenv()
+    app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
     # app.config['SQLALCHEMY_DATABASE_URI'] = F"sqlite:///{DB_NAME}"
-    # app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("SQLALCHEMY_DATABASE_URI")
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("SQLALCHEMY_DATABASE_URI")
+
     db.init_app(app)
 
     # REGISTER OUR ROUTS
