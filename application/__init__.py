@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 app = Flask(__name__)
 
 # DB_NAME = "database.db"
-db = SQLAlchemy(app)
+db = SQLAlchemy()
 
 
 def create_app():
