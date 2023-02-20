@@ -50,10 +50,8 @@ def signup():
         elif password != repassword:
             flash("Please check your password.They aren't matched", category='error')
         else:
-            # cursor.execute('INSERT INTO users VALUES (NULL, % s, % s, % s)',
-            #                (name, email, generate_password_hash(password, 'sha256'),))
-            # db.connection.commit()
-            new_user = User(name=name, email=email, password=generate_password_hash(password, method="sha256") )
+
+            new_user = User(name=name, email=email, password=generate_password_hash(password, method="sha256"))
             db.session.add(new_user)
             db.session.commit()
             login_user(new_user, remember=True)
